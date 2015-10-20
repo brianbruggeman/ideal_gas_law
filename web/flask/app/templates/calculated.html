@@ -1,0 +1,18 @@
+{% from "_form_helpers.html" import render_field %}
+
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <dl class="table">
+    <h1>Calculated: {{ missing_key.capitalize() }}</h1>
+    {% for key in data %}
+        {% if key == missing_key %}
+            <dt>{{ key }}</dt><dd class="calculated">{{ data[key] }}</dd>
+        {% else %}
+            <dt>{{ key }}</dt><dd>{{ data[key] }}</dd>
+        {% endif %}
+    {% endfor %}
+    </dl>
+    <a href="/">Back</a>
+{% endblock %}

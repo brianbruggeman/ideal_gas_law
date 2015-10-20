@@ -1,0 +1,17 @@
+{% from "_form_helpers.html" import render_field %}
+
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <form class="form-style-10" action="" method="post" name="calculated">
+        {{ form.hidden_tag() }}
+        <h1>Calculate the Ideal Gas Law</h1>
+        <p>
+            {{ render_field(form.pressure) }}<br />
+            {{ render_field(form.volume) }}<br />
+            {{ render_field(form.temperature) }}<br />
+        </p>
+        <p><input type="submit" value="Calculate"></p>
+    </form>
+{% endblock %}
